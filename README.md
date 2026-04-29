@@ -4,10 +4,10 @@ This tool is a Workout Tracker. It will remember exercises, the weight used, and
 This program requires the dependencies FreeSimpleGUI and
 The program can be run in VSCode or off of a batch file. To create the batch file, do the following:
 1. open Notepad and enter this code (enter your own file path):
-'''@echo off
+```@echo off
 python "C:/Users/USERNAME/FinalProject/Python/WorkoutTracker.py
 pause
-'''
+```
 2. save the text file as a batch file (.bat)
 3. save the batch file to your home screen and run it from there or run it from file explorer
 
