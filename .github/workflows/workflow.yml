@@ -21,4 +21,4 @@ jobs:
         run: pip install pytest FreeSimpleGUI
 
       - name: Run tests
-        run: python -m pytest FPPytest.py -v
+        run: python -m pytest Python/FPPytest.py -v
