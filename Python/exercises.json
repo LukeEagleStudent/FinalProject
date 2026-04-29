@@ -1,0 +1,10 @@
+{
+  "bench press": {
+    "weight": 135.0,
+    "reps": 5
+  },
+  "deadlift": {
+    "weight": 315.0,
+    "reps": 1
+  }
+}

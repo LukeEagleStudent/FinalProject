@@ -41,8 +41,16 @@ while True:
         name   = values["-NAME-"].strip().lower()
         weight = values["-WEIGHT-"].strip()
         reps   = values["-REPS-"].strip()
-        data[name] = {"weight": float(weight), "reps": int(reps)}   
-        save(data)                                
-        window["-TABLE-"].update(values=rows(data)) 
+
+        try:
+            weight_val = float(weight)
+            reps_val = int(reps)
+        except ValueError:
+            sg.popup("Please enter a valid number for Weight and an integer for Reps.")
+            continue
+
+        data[name] = {"weight": weight_val, "reps": reps_val}
+        save(data)
+        window["-TABLE-"].update(values=rows(data))
 
 window.close()
