@@ -1,7 +1,7 @@
 # Final Project for IS4010
 This tool is a Workout Tracker. It will remember exercises, the weight used, and the repetitions done. This solves the problem of difficulty with tracking the last weight used for an exercise.
 
-This program requires the dependencies FreeSimpleGUI and
+This program requires the dependencies FreeSimpleGUI and pytest. 
 The program can be run in VSCode or off of a batch file. To create the batch file, do the following:
 1. open Notepad and enter this code (enter your own file path):
 ```
