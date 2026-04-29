@@ -15,20 +15,21 @@ def save(data):
 
 def rows(data):
     return [[
-        name,
+        exercise,
         str(info.get("weight", "")),
         str(info.get("reps", ""))
-    ] for name, info in sorted(data.items())]
+    ] for exercise, info in sorted(data.items())]
 
 data   = load()                          
 layout = [
     [sg.Table(values=rows(data), headings=["Exercise", "Weight", "Reps"],
               key="-TABLE-", num_rows=8)],
-    [sg.Text("Exercise:"), sg.Input(key="-NAME-")  ],
+    [sg.Text("Exercise:"), sg.Input(key="-EXERCISE-")  ],
     [sg.Text("Weight:"),   sg.Input(key="-WEIGHT-")],
     [sg.Text("Reps:"),     sg.Input(key="-REPS-")  ],
     [sg.Button("Save"),    sg.Button("Close")       ],
 ]
+main(){
 window = sg.Window("My Tracker", layout, finalize=True)
 
 while True:
@@ -38,7 +39,7 @@ while True:
         break
 
     if event == "Save":
-        name   = values["-NAME-"].strip().lower()
+        exercise   = values["-EXERCISE-"].strip().lower()
         weight = values["-WEIGHT-"].strip()
         reps   = values["-REPS-"].strip()
 
@@ -49,8 +50,10 @@ while True:
             sg.popup("Please enter a valid number for Weight and an integer for Reps.")
             continue
 
-        data[name] = {"weight": weight_val, "reps": reps_val}
+        data[exercise] = {"weight": weight_val, "reps": reps_val}
         save(data)
         window["-TABLE-"].update(values=rows(data))
 
 window.close()
+}
+if __name__ == "__main__":    main()
