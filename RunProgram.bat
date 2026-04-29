@@ -1,3 +1,3 @@
 @echo off
-python "C:\Users\iampr\FinalProject\Python\WorkoutTracker.py"
+python "C:\Users\USERNAME\FinalProject\Python\WorkoutTracker.py"
 pause
